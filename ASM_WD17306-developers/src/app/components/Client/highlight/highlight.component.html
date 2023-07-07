@@ -1,0 +1,21 @@
+<header class="py-4 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500">
+  <div class="container mx-auto px-4">
+    <h1 class="text-white text-2xl font-bold">Highlights</h1>
+  </div>
+</header>
+<main class="container mx-auto px-4 py-8  h-[1000px]">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col px-[100px]">
+      <div *ngFor="let highlight of highlights; index as i" class="bg-white shadow-md rounded-lg ">
+        <div>
+          <iframe width="560" height="315" src="{{ highlight.Video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2"> {{ highlight.name }}</h3>
+            <p class="text-gray-600">{{ highlight.description }}</p>
+        </div>
+    </div>
+      <!-- Add more video cards here as needed -->
+    </div>
+  </div>
+</main>

@@ -1,0 +1,57 @@
+<a routerLink="news/add" class=" group rounded-full px-5 py-2 hover:bg-green-700 h-12 w-48 bg-green-500 font-bold text-lg text-white relative overflow-hidden " href="">Tạo mới</a>
+<div class="relative overflow-x-auto mt-5">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          STT
+        </th>
+        <th scope="col" class="px-6 py-3">
+          name
+        </th>
+
+        <th scope="col" class="px-6 py-3">
+         Ngày đăng
+        </th>
+
+        <th scope="col" class="px-6 py-3">
+        Mô tả 
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Mô tả hình ảnh
+          </th>
+        <th scope="col" class="px-6 py-3">
+         Chức năng
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as i" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          {{ i + 1 }}
+        </th>
+        <td class="px-6 py-4">
+          {{ product.name }}
+        </td>
+        <td class="px-6 py-4">
+          {{ product.date }}
+        </td>
+        <td class="px-6 py-4">
+          {{ product.description }}
+        </td>
+        <td class="px-6 py-4">
+          <img class="w-[100px]" src="{{ product.image }}" alt="">
+        </td>
+
+        <td class=" py-2">
+          <button type="button" (click)="xoasp(product._id)"
+            class="focus:outline-none text-white bg-red-700
+             hover:bg-red-800 focus:ring-4 focus:ring-red-300
+              font-medium rounded-lg text-sm px-5 py-2.5 mb-2
+               dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ">Xóa</button>
+            <a  routerLink="news/edit/{{product._id}}" class="focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900 ml-8" href="">Sửa</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
